@@ -20,6 +20,8 @@ func main() {
 		panic(err)
 	}
 
+	session.SetMode(mgo.Monotonic, true)
+
 	defer session.Close()
 	models.Db = session.DB(dbName)
 	postsCol := models.Db.C(postsCollection)

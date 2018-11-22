@@ -8,7 +8,7 @@ import (
 
 //Author creator of articles
 type Author struct {
-	ID        bson.ObjectId `json:"id"`
+	ID        bson.ObjectId `json:"id" bson:"_id"`
 	FirstName string        `json:"FirstName"`
 	LastName  string        `json:"LastName"`
 	Password  string        `json:"password"`
@@ -17,10 +17,10 @@ type Author struct {
 
 //Post article
 type Post struct {
-	ID        bson.ObjectId `json:"id"`
+	ID        bson.ObjectId `json:"id" bson:"_id"`
 	Title     string        `json:"title"`
 	Body      string        `json:"body"`
 	CreatedAt time.Time     `json:"createdAt"`
 	UpdatedAt time.Time     `json:"updatedAt"`
-	AuthorID  bson.ObjectId `json:"authorId,omitempty"`
+	// AuthorID  bson.ObjectId `json:"authorId,omitempty"`
 }

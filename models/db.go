@@ -28,8 +28,9 @@ func (r *PostRepository) Save(post *Post) error {
 }
 
 //Delete removes a post
-func (r *PostRepository) Delete(postID string) error {
-	return nil
+func (r *PostRepository) Delete(id string) error {
+	err := r.Posts.RemoveId(bson.ObjectIdHex(id))
+	return err
 }
 
 //GetPosts retrieves all posts
